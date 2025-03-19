@@ -6,6 +6,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface ApiService {
-    @GET("getRates") // Matches the backend API endpoint
+    @GET("getRates") 
     Call<List<ShippingRate>> getShippingRates();
 }
