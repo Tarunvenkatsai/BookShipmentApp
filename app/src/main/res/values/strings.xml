@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Book Shipment Application</string>
+
+    <string-array name="shipping_options">
+        <item>Delhivery</item>
+        <item>DTDC</item>
+        <item>Bluedart</item>
+    </string-array>
+</resources>

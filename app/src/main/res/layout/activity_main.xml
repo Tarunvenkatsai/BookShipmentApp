@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Pickup Address -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pickup Address"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/editTextPickup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Pickup Address"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"/>
+
+    <!-- Delivery Address -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delivery Address"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/editTextDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Delivery Address"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"/>
+
+    <!-- Shipping Options Spinner -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Shipping Option"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerShipping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_spinner"
+        android:padding="10dp"/>
+
+    <!-- Fetch Rates Button -->
+    <Button
+        android:id="@+id/btnPriceCalculation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price Calculation"
+        android:backgroundTint="#FF6200EE"
+        android:textColor="#FFF"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"/>
+
+    <!-- Display Shipping Rates -->
+    <TextView
+        android:id="@+id/textViewRates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shipping rates will appear here"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_edittext"/>
+
+    <!-- Proceed to Payment Button -->
+    <Button
+        android:id="@+id/btnProceedPayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proceed to Payment"
+        android:backgroundTint="#009688"
+        android:textColor="#FFF"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"/>
+
+</LinearLayout>
