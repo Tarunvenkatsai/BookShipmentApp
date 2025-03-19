@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize UI components
         editTextPickup = findViewById(R.id.editTextPickup);
         editTextDelivery = findViewById(R.id.editTextDelivery);
         spinnerShipping = findViewById(R.id.spinnerShipping);
@@ -45,13 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // Apply the adapter to the spinner
+        
         spinnerShipping.setAdapter(adapter);
 
-        // Initialize API service
         apiService = ApiClient.getClient().create(ApiService.class);
 
-        // Handle Price Calculation button click
         btnPriceCalculation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Handle Proceed to Payment button click
         btnProceedPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fetchShippingRates() {
-        String selectedCourier = spinnerShipping.getSelectedItem().toString(); // Get selected courier
+        String selectedCourier = spinnerShipping.getSelectedItem().toString(); 
         String pickup = editTextPickup.getText().toString().trim();
         String delivery = editTextDelivery.getText().toString().trim();
 
@@ -85,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     List<ShippingRate> rates = response.body();
 
-                    // Find the selected shipping rate
                     ShippingRate selectedRate = null;
                     for (ShippingRate rate : rates) {
                         if (rate.getCourierName().equalsIgnoreCase(selectedCourier)) {
@@ -94,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
-                    // Update the textViewRates only with the selected option
+
                     if (selectedRate != null) {
                         textViewRates.setText(selectedRate.getCourierName() + ": $" + selectedRate.getPrice());
                     } else {
