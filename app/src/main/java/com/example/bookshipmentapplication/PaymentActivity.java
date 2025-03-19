@@ -21,21 +21,21 @@ public class PaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        // Initialize UI components
+    
         textViewAmount = findViewById(R.id.textViewAmount);
         editTextCardNumber = findViewById(R.id.editTextCardNumber);
         editTextExpiry = findViewById(R.id.editTextExpiry);
         editTextCVV = findViewById(R.id.editTextCVV);
         btnPayNow = findViewById(R.id.btnPayNow);
 
-        // Get shipping cost from MainActivity (if passed)
+        
         Intent intent = getIntent();
         if (intent.hasExtra("shippingCost")) {
             String shippingCost = intent.getStringExtra("shippingCost");
             textViewAmount.setText("Total Amount: $" + shippingCost);
         }
 
-        // Handle payment button click
+      
         btnPayNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,8 +54,8 @@ public class PaymentActivity extends AppCompatActivity {
             return;
         }
 
-        // Dummy success message (Replace with real payment integration)
+       
         Toast.makeText(this, "Payment Successful!", Toast.LENGTH_LONG).show();
-        finish(); // Closes PaymentActivity
+        finish(); 
     }
 }
